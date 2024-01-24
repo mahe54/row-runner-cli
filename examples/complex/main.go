@@ -22,7 +22,7 @@ type Car struct {
 
 type MyCreatorImpl struct{}
 
-func (t MyCreatorImpl) CreateFromInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- lib.Status, status *lib.Status) {
+func (t MyCreatorImpl) ProcessInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- lib.Status, status *lib.Status) {
 
 	car := input.(Car)
 	retry := false

@@ -3,7 +3,7 @@ package pkg
 import "github.com/vbauerster/mpb/v8"
 
 type Creator interface {
-	CreateFromInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- Status, status *Status)
+	ProcessInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- Status, status *Status)
 	ConvertToInput(data []string) interface{}
 }
 

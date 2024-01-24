@@ -1,4 +1,4 @@
-# *Row-Runner!*
+# *Row-Runner-CLI!*
 [![Go Report Card](https://goreportcard.com/badge/github.com/mahe54/row-runner-cli)](https://goreportcard.com/report/github.com/mahe54/row-runner-cli)
 [![GoDoc](https://godoc.org/github.com/mahe54/row-runner-cli?status.svg)](https://godoc.org/github.com/mahe54/row-runner-cli)
 [![Build Status](https://travis-ci.org/mahe54/row-runner-cli.svg?branch=main)](https://travis-ci.org/mahe54/row-runner-cli)
@@ -7,7 +7,7 @@
 <br>
 <div align="center">
 
-![RowRunnerIcon](rowrunner_small.png)
+![RowRunnerIcon](img/rowrunner_small.png)
 
 </div>
 
@@ -22,12 +22,13 @@ Row Runner is a versatile CLI tool designed for efficient processing of CSV data
 - **Scalability and Performance**: Optimized to handle large datasets efficiently.
 - **Visual Feedback**: Provides visual feedback on the progress of each process.
 
-![Sample Output](sample_output.gif)
+![Sample Output](img/sample_output.gif)
 
 ## Installation
 ```bash
 # Example installation command
-go get github.com/yourusername/row-runner-cli
+go install github.com/mahe54/row-runner-cli
+```
 
 # Example usage command
 row-runner-cli [options] <input-source>
@@ -55,11 +56,21 @@ Progress bars are implemented by using Vladimir Bauer - vbauerster [mpb](https:/
 
 
 ### Usage
+```bash
+Usage of main:
+  -file string
+    	Input file to process (default "./input.csv")
+  -log string
+    	Log file name (default "app.log")
+  -s int
+    	Semaphore size (default 2)
+```
 
-When using this package, together with your own types.
 
-This more complex example is reading a csv with information about cars:
-and has status feedback for when the car is being processed, when it fails, when it is being retried and when it is completed etc.
+For use with your own types and interface implementation.
+
+This is the more complex example reading a csv with information about 'cars' and processing them in parallel,
+and has status feedback for when the car is being processed, when it fails, when it is being retried and when it is completed etc. You can control the whole flow very easily.
 
 
 ```go
@@ -87,7 +98,8 @@ type Car struct {
 
 type MyCreatorImpl struct{}
 
-func (t MyCreatorImpl) CreateFromInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- lib.Status, status *lib.Status) {
+
+func (t MyCreatorImpl) ProcessInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- lib.Status, status *lib.Status) {
 
 	car := input.(Car)
 	retry := false
@@ -179,8 +191,5 @@ func main() {
 
 Output
 
-When you run the program, it reads the input.csv file from the path given and handles each row in the file with the semaphoresize given.
+When you run the program, it reads the input and handles each (csv) row with the semaphoresize given.
 The semaphoresize is the amount of goroutines that will be running at the same time (in parallel).
-
-Here is a sample output:
-![Sample Output](sample_output.svg)

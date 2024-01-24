@@ -71,7 +71,7 @@ func Start(creator Creator, inputs []interface{}, semaphoreSize int, logFileName
 		semaphore <- struct{}{}
 		go func(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- Status, status *Status) {
 			defer func() { <-semaphore }()
-			creator.CreateFromInput(input, bar, progress, cancel, statusChan, status)
+			creator.ProcessInput(input, bar, progress, cancel, statusChan, status)
 			close(progress)
 		}(input, bar, progress, cancel, statusChan, status)
 

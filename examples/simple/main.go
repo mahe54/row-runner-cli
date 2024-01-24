@@ -18,7 +18,7 @@ type Input struct {
 
 type CreatorExampleImpl struct{}
 
-func (t CreatorExampleImpl) CreateFromInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- lib.Status, status *lib.Status) {
+func (t CreatorExampleImpl) ProcessInput(input interface{}, bar *mpb.Bar, progress chan<- int, cancel <-chan struct{}, statusChan chan<- lib.Status, status *lib.Status) {
 	// Simulate long-running task, updates progress channel every 500-1500ms by 10%
 	for i := 1; i <= 10; i++ {
 		select {
