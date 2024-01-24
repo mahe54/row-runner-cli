@@ -5,6 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/mahe54/row-runner-cli/badge.svg?branch=main)](https://coveralls.io/github/mahe54/row-runner-cli?branch=main)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 ![RowRunnerIcon](rowrunner_small.png)
+<br>
 ## Introduction
 Row Runner is a versatile CLI tool designed for efficient processing of CSV data. It is capable of handling CSV input from various sources, including files and other `io.Reader` implementations, making it a flexible solution for different data processing needs.
 
