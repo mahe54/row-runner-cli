@@ -17,3 +17,6 @@
 /build/**
 /examples/simple/log.txt
 /examples/complex/app.log
+app.log
+*.tape
+**/.DS_Store

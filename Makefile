@@ -5,7 +5,7 @@ run_simple:
 	@go run ./examples/simple/main.go -file ./examples/simple/input.csv -s 3 -log ./examples/simple/log.txt
 
 run_complex:
-	@go run ./examples/complex/main.go -file ./examples/complex/input.csv -s 6
+	@go run ./examples/complex/main.go -file ./examples/complex/input.csv -s 4
 
 build: clean lint test
 	@echo "+ $@"
