@@ -5,7 +5,12 @@
 [![Coverage Status](https://coveralls.io/repos/github/mahe54/row-runner-cli/badge.svg?branch=main)](https://coveralls.io/github/mahe54/row-runner-cli?branch=main)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 <br>
+<div align="center">
+
 ![RowRunnerIcon](rowrunner_small.png)
+
+</div>
+
 
 
 ## Introduction
