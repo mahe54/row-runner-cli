@@ -17,9 +17,11 @@ clean:
 	@echo "+ $@"
 	@rm -rf $(BUILDDIR)
 	@mkdir -p $(BUILDDIR)
+
 test:
 	@echo "+ $@"
-	go test -v ./pkg/...
+	go test -v -coverprofile=coverage.out ./pkg/...
+
 
 lint:
 	@echo "+ $@"
