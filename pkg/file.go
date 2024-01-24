@@ -2,6 +2,7 @@ package pkg
 
 import (
 	"encoding/csv"
+	"io"
 	"os"
 )
 
@@ -12,8 +13,12 @@ func ReadDataFromFile(inputFile string, creator Creator) ([]interface{}, error) 
 	}
 	defer file.Close()
 
-	reader := csv.NewReader(file)
-	data, err := reader.ReadAll()
+	return ReadDataFromReader(file, creator)
+}
+
+func ReadDataFromReader(reader io.Reader, creator Creator) ([]interface{}, error) {
+	csvReader := csv.NewReader(reader)
+	data, err := csvReader.ReadAll()
 	if err != nil {
 		return nil, err
 	}

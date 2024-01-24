@@ -58,14 +58,6 @@ func Start(creator Creator, inputs []interface{}, semaphoreSize int, logFileName
 		bar := p.New(100,
 			mpb.BarStyle().Lbound("[\u001b[32;1m█").Filler("█").Tip("█\u001b[36;1m").Padding("\u001b[0m░").Rbound("\u001b[0m]╟"),
 			mpb.PrependDecorators(
-				// decor.OnCondition(statusUpdate(&statuses[i], barText, 5), string(statuses[i].Current) == string(Working)),
-				// decor.OnCondition(statusUpdate(&statuses[i], barText, 5), string(statuses[i].Current) == string(Failed)),
-
-				// decor.Name(string(statuses[i].Current)+" "+barText), //, decor.WC{W: len(barText) + 1, C: decor.DidentRight}),
-				// decor.OnComplete(
-				// 	decor.OnCondition(statusUpdate(&statuses[i], barText, 5), string(statuses[i].Current) == string(Failed)), "jh",
-				// ),
-
 				decor.Conditional(string(statuses[i].Current) == string(Starting),
 					statusUpdate(statuses[i], barText, 11, decor.WC{W: len(string(statuses[i].Current)) + len(barText) + 2}), statusUpdate(statuses[i], barText, 9, decor.WC{W: len(string(statuses[i].Current)) + len(barText) + 3})),
 			),
@@ -114,13 +106,6 @@ func statusUpdate(status *Status, text string, ws uint, wcc ...decor.WC) decor.D
 
 	f := func(s decor.Statistics) string {
 		return fmt.Sprintf("%s %s", status.Current, text)
-		// if status.Current == Working {
-		// 	return string(Working) + " " + string(text)
-		// }
-		// if status.Current == Completed {
-		// 	return string(Completed) + " " + string(text)
-		// }
-		// return string(Failed) + " " + string(text)
 	}
 	return decor.Any(f, wcc...)
 }

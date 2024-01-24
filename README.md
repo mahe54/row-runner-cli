@@ -1,3 +1,41 @@
+# *Row-Runner!*
+[![Go Report Card](https://goreportcard.com/badge/github.com/mahe54/row-runner-cli)](https://goreportcard.com/report/github.com/mahe54/row-runner-cli)
+[![GoDoc](https://godoc.org/github.com/mahe54/row-runner-cli?status.svg)](https://godoc.org/github.com/mahe54/row-runner-cli)
+[![Build Status](https://travis-ci.org/mahe54/row-runner-cli.svg?branch=main)](https://travis-ci.org/mahe54/row-runner-cli)
+[![Coverage Status](https://coveralls.io/repos/github/mahe54/row-runner-cli/badge.svg?branch=main)](https://coveralls.io/github/mahe54/row-runner-cli?branch=main)
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+![RowRunnerIcon](rowrunner_medium.png)
+## Introduction
+Row Runner is a versatile CLI tool designed for efficient processing of CSV data. It is capable of handling CSV input from various sources, including files and other `io.Reader` implementations, making it a flexible solution for different data processing needs.
+
+## Features
+- **Parallel Processing**: Processes CSV data from files or any `io.Reader` source in parallel, enhancing performance.
+- **Real-time Progress Tracking**: Each process is accompanied by a progress bar with status updates like starting, working, error, etc.
+- **Scalability and Performance**: Optimized to handle large datasets efficiently.
+
+## Installation
+```bash
+# Example installation command
+go get github.com/yourusername/row-runner-cli
+
+# Example usage command
+row-runner-cli [options] <input-source>
+
+id, data
+1, sample1
+2, sample2
+
+## Contributing
+
+### We welcome contributions to Row Runner! If you have improvements or fixes, please follow these steps:
+
+1. Fork the repository.
+2. Make your changes.
+3. Submit a pull request with a clear description of the changes.
+
+
+
+
 # A Generic CLI with visual feedback
 ## Concurrent Processing of Long-Running Tasks
 
