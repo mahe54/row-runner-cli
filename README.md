@@ -25,8 +25,9 @@ Row Runner is a versatile CLI tool designed for efficient processing of CSV data
 ![Sample Output](img/sample_output.gif)
 
 ## Installation
-```bash
+
 # Example installation command
+```bash
 go install github.com/mahe54/row-runner-cli
 ```
 
