@@ -22,39 +22,12 @@ Row Runner is a versatile CLI tool designed for efficient processing of CSV data
 - **Scalability and Performance**: Optimized to handle large datasets efficiently.
 - **Visual Feedback**: Provides visual feedback on the progress of each process.
 
-![Sample Output](img/sample_output.gif)
-
 ## Installation
 
-# Example installation command
+#### Example installation command
 ```bash
 go get github.com/mahe54/row-runner-cli
 ```
-
-# Example usage command
-row-runner-cli [options] <input-source>
-
-id, data
-1, sample1
-2, sample2
-
-## Contributing
-
-### We welcome contributions to Row Runner! If you have improvements or fixes, please follow these steps:
-
-1. Fork the repository.
-2. Make your changes.
-3. Submit a pull request with a clear description of the changes.
-
-
-
-
-# A Generic CLI with visual feedback
-## Concurrent Processing of Long-Running Tasks
-
-The `examples/simple/main.go` program demonstrates how to perform concurrent processing of long-running tasks using goroutines and channels in Go. The program reads a csv list and processes them in paralell. The progress of each csw row is displayed using an ASCII progress bar.
-Progress bars are implemented by using Vladimir Bauer - vbauerster [mpb](https://github.com/vbauerster/mpb/v8) package.
-
 
 ### Usage
 ```bash
@@ -67,6 +40,20 @@ Usage of main:
     	Semaphore size (default 2)
 ```
 
+
+## Contributing
+
+#### We welcome contributions to Row Runner!
+
+If you have improvements or fixes, please follow these steps:
+
+1. Fork the repository.
+2. Make your changes.
+3. Submit a pull request with a clear description of the changes.
+
+## Example
+The `examples/simple/main.go` program demonstrates how to perform concurrent processing of long-running tasks using goroutines and channels in Go. The program reads a csv list and processes them in paralell. The progress of each csw row is displayed using an ASCII progress bar.
+Progress bars are implemented by using Vladimir Bauer - vbauerster [mpb](https://github.com/vbauerster/mpb/v8) package.
 
 For use with your own types and interface implementation.
 
@@ -162,6 +149,7 @@ func (t MyCreatorImpl) ProcessInput(input interface{}, bar *mpb.Bar, progress ch
 
 func (t MyCreatorImpl) ConvertToInput(data []string) interface{} {
 
+	//Replace to fit your type
 	return Car{
 		RegNumber: data[0],
 		Brand:     data[1],
@@ -194,3 +182,5 @@ Output
 
 When you run the program, it reads the input and handles each (csv) row with the semaphoresize given.
 The semaphoresize is the amount of goroutines that will be running at the same time (in parallel).
+
+![Sample Output](img/sample_output.gif)
