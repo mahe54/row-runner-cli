@@ -1,8 +1,11 @@
-module github.com/mahe54/generic-go-cli-file-input
+module github.com/mahe54/row-runner-cli
 
 go 1.21
 
-require github.com/vbauerster/mpb/v8 v8.2.1
+require (
+	github.com/mahe54/generic-go-cli-file-input v1.0.0
+	github.com/vbauerster/mpb/v8 v8.2.1
+)
 
 require (
 	github.com/VividCortex/ewma v1.2.0 // indirect

@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"time"
 
-	lib "github.com/mahe54/generic-go-cli-file-input/pkg"
+	lib "github.com/mahe54/row-runner-cli/pkg"
 	"github.com/vbauerster/mpb/v8"
 )
 
