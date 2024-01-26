@@ -1,7 +1,6 @@
 # *Row-Runner-CLI!*
 [![Go Report Card](https://goreportcard.com/badge/github.com/mahe54/row-runner-cli)](https://goreportcard.com/report/github.com/mahe54/row-runner-cli)
 [![GoDoc](https://godoc.org/github.com/mahe54/row-runner-cli?status.svg)](https://godoc.org/github.com/mahe54/row-runner-cli)
-[![Coverage Status](https://coveralls.io/repos/github/mahe54/row-runner-cli/badge.svg?branch=main)](https://coveralls.io/github/mahe54/row-runner-cli?branch=main)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 <br>
 <div align="center">
