@@ -6,7 +6,6 @@
 <div align="center">
 
 ![RowRunnerIcon](img/rowrunner_small.png)
-
 </div>
 
 
