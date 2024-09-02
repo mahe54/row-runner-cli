@@ -11,7 +11,7 @@
 
 
 ## Introduction
-Row Runner is a versatile CLI tool designed for efficient processing of CSV data. It is capable of handling CSV input from various sources, including files and other `io.Reader` implementations, making it a flexible solution for different data processing needs.
+Row Runner is a versatile CLI tool designed for efficient processing of batch data. It is capable of handling CSV input from various sources, including files and other `io.Reader` implementations, making it a flexible solution for different data processing needs.
 
 ## Features
 - **Parallel Processing**: Processes CSV data from files or any `io.Reader` source in parallel, enhancing performance.
