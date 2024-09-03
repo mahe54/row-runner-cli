@@ -8,8 +8,6 @@
 ![RowRunnerIcon](img/rowrunner_small.png)
 </div>
 
-
-
 ## Introduction
 Row Runner is a versatile CLI tool designed for efficient processing of batch data. It is capable of handling CSV input from various sources, including files and other `io.Reader` implementations, making it a flexible solution for different data processing needs.
 
